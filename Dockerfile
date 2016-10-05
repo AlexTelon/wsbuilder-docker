@@ -19,7 +19,7 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
 RUN apt-get -q update &&\
-    DEBIAN_FRONTEND="noninteractive" apt-get -q install -y -o Dpkg::Options::="--force-confnew"  --no-install-recommends openjdk-9-jre-headless build-essential automake autoconf libgtk2.0-dev libglib2.0-dev libpcap0.8-dev flex bison liblua5.3-0 liblua5.3-dev lua5.3 qt5-default cmake zlib1g zlib1g-dev git qttools5-dev-tools libqt5multimedia5 libqt5multimedia5-plugins libqt5svg5 libqt5svg5-dev libqt5printsupport5 libc-ares-dev libc-ares2 libssh-dev libssh-4 &&\
+    DEBIAN_FRONTEND="noninteractive" apt-get -q install -y -o Dpkg::Options::="--force-confnew"  --no-install-recommends openjdk-9-jre-headless build-essential automake autoconf libgtk2.0-dev libglib2.0-dev libpcap0.8-dev flex bison liblua5.2-0 liblua5.2-dev lua5.2 qt5-default cmake zlib1g zlib1g-dev git qttools5-dev-tools libqt5multimedia5 libqt5multimedia5-plugins libqt5svg5 libqt5svg5-dev libqt5printsupport5 libc-ares-dev libc-ares2 libssh-dev libssh-4 &&\
     apt-get -q clean -y && rm -rf /var/lib/apt/lists/* && rm -f /var/cache/apt/*.bin
 
 RUN useradd -m -d /home/jenkins -s /bin/bash jenkins &&\
