@@ -24,9 +24,8 @@ RUN apt-get -q update &&\
 
 RUN useradd -m -d /home/jenkins -s /bin/bash jenkins &&\
     echo "jenkins:jenkins" | chpasswd
-RUN mkdir /home/jenkins && chown jenkins.jenkins /home/jenkins
-RUN mkdir /home/jenkins/.ssh
-RUN ssh-keygen -f /home/jenkins/.ssh2/ida_rsa -t rsa -N ''
+#RUN mkdir /home/jenkins/.ssh
+#RUN ssh-keygen -f /home/jenkins/.ssh2/ida_rsa -t rsa -N ''
 
 EXPOSE 22
 
